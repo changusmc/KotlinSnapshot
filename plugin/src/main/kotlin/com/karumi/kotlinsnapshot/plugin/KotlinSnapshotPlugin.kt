@@ -33,6 +33,7 @@ open class KotlinSnapshotPlugin : Plugin<Project> {
                 val dependency = project.dependencies
                     .create("com.karumi.kotlinsnapshot:core:2.2.1-SNAPSHOT")
                 project.dependencies.add("testImplementation", dependency)
+                project.dependencies.add("androidTestImplementation", dependency)
                 project.gradle.removeListener(this)
             }
 
