@@ -25,4 +25,4 @@ script:
   - cd KotlinConsumer
   - ./gradlew test --info
   - cd ../AndroidConsumer
-  - ./gradlew test --info
+  - ./gradlew test connectedCheck --info
