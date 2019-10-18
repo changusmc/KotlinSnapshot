@@ -1,13 +1,11 @@
 package com.karumi.androidconsumer
 
-import com.karumi.kotlinsnapshot.KotlinSnapshot
-import org.junit.Assert
+import com.karumi.kotlinsnapshot.matchWithSnapshot
 import org.junit.Test
 
 class ExampleUiTest {
     @Test
-    fun can_resolve_KotlinSnapshot() {
-        val snapshot = KotlinSnapshot()
-        Assert.assertNotNull(snapshot)
+    fun addition_isWrong() {
+        14.matchWithSnapshot()
     }
 }
