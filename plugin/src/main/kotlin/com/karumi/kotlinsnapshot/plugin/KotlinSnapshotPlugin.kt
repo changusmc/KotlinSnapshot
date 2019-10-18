@@ -33,8 +33,14 @@ open class KotlinSnapshotPlugin : Plugin<Project> {
                 val dependency = project.dependencies
                     .create("com.karumi.kotlinsnapshot:core:2.2.1-SNAPSHOT")
                 project.dependencies.add("testImplementation", dependency)
-                project.dependencies.add("androidTestImplementation", dependency)
                 project.gradle.removeListener(this)
+
+                project.plugins.withId("com.android.library") {
+                    project.dependencies.add("androidTestImplementation", dependency)
+                }
+                project.plugins.withId("com.android.application") {
+                    project.dependencies.add("androidTestImplementation", dependency)
+                }                
             }
 
             override fun afterResolve(dependencies: ResolvableDependencies?) {}
