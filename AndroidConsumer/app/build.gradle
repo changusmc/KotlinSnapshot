@@ -1,8 +1,8 @@
 buildscript {
   repositories {
+    maven { url uri('../../repo') }
     google()
     jcenter()
-    maven { url uri('../../repo') }
   }
   dependencies {
     classpath 'com.karumi.kotlinsnapshot:plugin:2.2.1-SNAPSHOT'
